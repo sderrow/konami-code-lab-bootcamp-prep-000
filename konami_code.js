@@ -5,7 +5,8 @@ function init() {
   const body = document.querySelector('body');
   var i = 0;
   body.addEventListener('keydown', function(e) {
-    if (e.which === code[i]) {
+    const key = parseInt(e.detail || e.which);
+    if (key === code[i]) {
       i++;
       if (i == code.length) {
         alert('Congratulations on finding the hidden secret!');
